@@ -29,7 +29,7 @@
         <div class='pres-wrp'>
           <div class='pres-content'>
             <div class='pres-head vf aic'>
-              <span>Joel<br />Johansen</span>
+              <span>{{ $firstName }}<br />{{ $lastName }}</span>
               <div class='logo hf air'>
                 <img src="{{ asset('img/logo.png') }}">
                 <div class="env-info">

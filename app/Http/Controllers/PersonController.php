@@ -11,7 +11,16 @@ class PersonController extends Controller
 {
   function index($ctx = 'presentation'){
     $p = Person::where('id',1)->get()[0];
-    return Response(view('presentation',['title' => $p->firstName.' '.$p->lastName,'context' => $ctx, 'content' => $p->$ctx]), 200);
+    $name = $p->firstName.' '.$p->lastName;
+    $fullName = explode(' ', $name);
+    return Response(
+      view('presentation',
+        ['title' => $name,
+        'context' => $ctx,
+        'content' => $p->$ctx,
+        'firstName' => $fullName[0],
+        'lastName' => $fullName[1]]
+      ),200);
   }
 
   function show(){

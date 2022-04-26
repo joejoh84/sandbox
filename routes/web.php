@@ -14,6 +14,6 @@ use App\Http\Controllers\PersonController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::permanentRedirect('/', '/person/');
+Route::permanentRedirect('/', '/person/presentation');
 
 Route::get('/person/{ctx?}', [PersonController::class, 'index']);
